@@ -48,7 +48,7 @@ export function Layout(content) {
                 visibility: hidden;
                 transform: translateY(20px);
                 transition: var(--transition);
-                z-index: 1000;
+                z-index: 10001;
             }
             .dropdown-item {
                 display: block;
@@ -182,64 +182,90 @@ export function Layout(content) {
 
     // PREMIUM FOOTER
     const footer = document.createElement('footer');
-    footer.style.background = '#F8FAFC';
+    footer.className = 'footer-supreme';
     footer.style.padding = '120px 0 60px';
     footer.style.borderTop = '1px solid rgba(0,0,0,0.05)';
     footer.innerHTML = `
         <div class="container">
-            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 60px; margin-bottom: 80px;">
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 2.2fr; gap: 60px; margin-bottom: 80px;">
                 <div>
-                    <img src="/logo.png" alt="Vivencia" style="height: 50px; margin-bottom: 30px;">
-                    <p style="color: var(--text-muted); font-size: 15px; line-height: 1.8; margin-bottom: 30px; max-width: 320px;">
-                        The School Skill Partner. We take absolute ownership of NEP 2020 skill execution for premium institutions.
+                    <img src="/logo.png" alt="Vivencia" class="footer-logo-elite">
+                    <p style="color: var(--text-muted); font-size: 15px; line-height: 1.8; margin-bottom: 32px; max-width: 320px; opacity: 0.9;">
+                        The School Skill Partner. We take absolute ownership of NEP 2020 skill execution for world-class institutions.
                     </p>
-                    <div style="display: flex; gap: 15px;">
-                        <a href="https://www.facebook.com/profile.php?id=61575078729552" target="_blank" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy); transition: transform 0.2s;"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://x.com/vivenciaedu" target="_blank" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy); transition: transform 0.2s;"><i class="fab fa-x-twitter"></i></a> 
-                        <a href="https://www.instagram.com/vivencia_edu/" target="_blank" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy); transition: transform 0.2s;"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/vivencia-edu-b3675035b" target="_blank" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy); transition: transform 0.2s;"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.youtube.com/@Vivenciaedu" target="_blank" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy); transition: transform 0.2s;"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    <div style="margin-top: 30px; font-size: 14px; color: var(--text-muted); line-height: 1.6;">
-                        <strong>Headquarters:</strong><br>
-                        Plot No: 288, Road No: 78,<br>
-                        Jubilee Hills, Hyderabad – 500033,<br>
-                        Telangana, India
+                    <div style="display: flex; gap: 12px;">
+                        <a href="https://www.facebook.com/profile.php?id=61575078729552" target="_blank" class="footer-social-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/vivenciaedu" target="_blank" class="footer-social-btn"><i class="fab fa-x-twitter"></i></a> 
+                        <a href="https://www.instagram.com/vivencia_edu/" target="_blank" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/vivencia-edu-b3675035b" target="_blank" class="footer-social-btn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@Vivenciaedu" target="_blank" class="footer-social-btn"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div>
-                    <h4 style="color: var(--p-navy); margin-bottom: 30px; font-size: 18px;">Quick Links</h4>
-                    <ul style="list-style: none; padding: 0; display: grid; gap: 15px;">
-                        <li><a href="/about" data-link style="text-decoration:none; color:var(--text-muted); font-size:15px;">The Firm</a></li>
-                        <li><a href="/models" data-link style="text-decoration:none; color:var(--text-muted); font-size:15px;">Models</a></li>
-                        <li><a href="/contact" data-link style="text-decoration:none; color:var(--text-muted); font-size:15px;">Partner Contact</a></li>
+                    <h4 style="color: var(--p-navy); margin-bottom: 30px; font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">The Firm</h4>
+                    <ul style="list-style: none; padding: 0; display: grid; gap: 16px;">
+                        <li><a href="/about" data-link class="footer-link">About Us <i class="fas fa-chevron-right"></i></a></li>
+                        <li><a href="/models" data-link class="footer-link">Our Models <i class="fas fa-chevron-right"></i></a></li>
+                        <li><a href="/contact" data-link class="footer-link">Partner With Us <i class="fas fa-chevron-right"></i></a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="color: var(--p-navy); margin-bottom: 30px; font-size: 18px;">Expertise</h4>
-                    <ul style="list-style: none; padding: 0; display: grid; gap: 15px;">
-                        <li><a href="/entrepreneurship" data-link style="text-decoration:none; color:var(--text-muted); font-size:15px;">Entrepreneurship</a></li>
-                        <li><a href="/finance" data-link style="text-decoration:none; color:var(--text-muted); font-size:15px;">Financial Literacy</a></li>
-                        <li><a href="/ai-robotics" data-link style="text-decoration:none; color:var(--text-muted); font-size:15px;">AI & Robotics</a></li>
+                    <h4 style="color: var(--p-navy); margin-bottom: 30px; font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Pedagogy</h4>
+                    <ul style="list-style: none; padding: 0; display: grid; gap: 16px;">
+                        <li><a href="/entrepreneurship" data-link class="footer-link">Entrepreneurship <i class="fas fa-chevron-right"></i></a></li>
+                        <li><a href="/finance" data-link class="footer-link">Financial Literacy <i class="fas fa-chevron-right"></i></a></li>
+                        <li><a href="/ai-robotics" data-link class="footer-link">AI & Robotics <i class="fas fa-chevron-right"></i></a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="color: var(--p-navy); margin-bottom: 30px; font-size: 18px;">Contact Us</h4>
-                    <ul style="list-style: none; padding: 0; display: grid; gap: 15px;">
-                         <li style="color:var(--text-muted); font-size:15px;"><i class="fas fa-phone-alt" style="margin-right: 10px; color: var(--s-cyan);"></i> +91-88866 06701</li>
-                         <li style="color:var(--text-muted); font-size:15px;"><i class="fas fa-envelope" style="margin-right: 10px; color: var(--s-cyan);"></i> info@vivenciaedu.com</li>
-                    </ul>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+                        <span style="background: var(--s-cyan-muted); color: var(--p-navy); padding: 4px 12px; border-radius: 6px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Corporate Headquarters</span>
+                    </div>
+                    <div style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px; font-weight: 500;">
+                        Plot No: 288, Road No: 78, Jubilee Hills,<br>
+                        Hyderabad – 500033, Telangana, India
+                    </div>
+                    <div class="footer-map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.7126839352723!2d78.38883937516574!3d17.425576783468043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9158f201b205%3A0x11bbe7930514ca7d!2sVivencia%20Elite!5e0!3m2!1sen!2sin!4v1707921234567!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; filter: grayscale(0.2) contrast(1.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
             </div>
-            <div style="border-top: 1px solid rgba(0,0,0,0.05); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: var(--text-muted);">
-                <p>© 2026 Vivencia Elite. All Rights Reserved.</p>
-                <div style="display:flex; gap:30px;">
-                    <a href="#" style="text-decoration:none; color:inherit;">Privacy Policy</a>
-                    <a href="#" style="text-decoration:none; color:inherit;">Terms of Service</a>
+            <div style="border-top: 1px solid rgba(0,0,0,0.06); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+                <p>© 2026 Vivencia Educational Services. Global Education Standards.</p>
+                <div style="display:flex; gap:32px;">
+                    <a href="#" style="text-decoration:none; color:inherit; transition: color 0.3s;" onmouseover="this.style.color='var(--p-blue)'" onmouseout="this.style.color='inherit'">Privacy Policy</a>
+                    <a href="#" style="text-decoration:none; color:inherit; transition: color 0.3s;" onmouseover="this.style.color='var(--p-blue)'" onmouseout="this.style.color='inherit'">Terms of Service</a>
                 </div>
             </div>
         </div>
     `;
+
+    // BACK TO TOP BUTTON
+    const backToTop = document.createElement('a');
+    backToTop.href = '#';
+    backToTop.className = 'back-to-top';
+    backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+
+    backToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
     const main = document.createElement('main');
     main.className = 'main-content';
@@ -250,6 +276,7 @@ export function Layout(content) {
     layout.appendChild(footer);
     layout.appendChild(modal);
     layout.appendChild(sidebar);
+    layout.appendChild(backToTop);
 
     return layout;
 }
