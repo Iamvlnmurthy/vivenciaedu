@@ -1,7 +1,7 @@
 export function Layout(content) {
     const layout = document.createElement('div');
 
-    // NAVIGATION SUPREME
+    // PREMIUM NAVIGATION
     const nav = document.createElement('nav');
     nav.className = 'nav-supreme';
     window.addEventListener('scroll', () => {
@@ -11,8 +11,8 @@ export function Layout(content) {
 
     nav.innerHTML = `
         <div class="container nav-content">
-            <a href="/" data-link class="logo-container">
-                <img src="/logo.png?v=5" alt="Vivencia" class="logo-main" style="height: 48px;">
+            <a href="/" data-link class="logo-container" style="display: flex; align-items: center; height: 80px; overflow: hidden;">
+                <img src="/logo.png" alt="Vivencia" class="logo-main">
             </a>
             
             <ul class="nav-links">
@@ -20,69 +20,115 @@ export function Layout(content) {
                 <li><a href="/about" data-link class="nav-link">The Firm</a></li>
                 <li class="dropdown" style="position:relative;">
                     <a href="#" class="nav-link">Programs ▾</a>
-                    <div class="dropdown-menu" style="position:absolute; top:100%; left:0; background:white; min-width:240px; padding:20px; box-shadow:var(--glass-shadow); border-radius:8px; opacity:0; visibility:hidden; transition:var(--transition);">
-                        <a href="/entrepreneurship" data-link class="dropdown-item" style="display:block; padding:12px 0; text-decoration:none; color:var(--p-navy); font-size:14px; font-weight:600;">Young Entrepreneurship</a>
-                        <a href="/finance" data-link class="dropdown-item" style="display:block; padding:12px 0; text-decoration:none; color:var(--p-navy); font-size:14px; font-weight:600;">Financial Literacy</a>
-                        <a href="/ai-robotics" data-link class="dropdown-item" style="display:block; padding:12px 0; text-decoration:none; color:var(--p-navy); font-size:14px; font-weight:600;">AI & Robotics</a>
+                    <div class="dropdown-menu">
+                        <a href="/entrepreneurship" data-link class="dropdown-item">Young Entrepreneurship</a>
+                        <a href="/finance" data-link class="dropdown-item">Financial Literacy</a>
+                        <a href="/ai-robotics" data-link class="dropdown-item">AI & Robotics</a>
                     </div>
                 </li>
                 <li><a href="/models" data-link class="nav-link">Models</a></li>
-                <li><a href="/contact" data-link class="btn-elite" style="padding:0 24px; height:44px; font-size:12px;">Partner With Us</a></li>
             </ul>
+
+            <div style="display: flex; gap: 32px; align-items: center;">
+                <a href="https://vivenciaedu.com/erp/index.php" target="_blank" class="nav-link" style="color: var(--p-brand-blue); border-bottom: 2px solid transparent; transition: var(--transition);">Login</a>
+                <a href="/contact" data-link class="btn-elite" style="height:50px; padding: 0 40px; border-radius: 8px; font-size: 13px;">Partner With Us</a>
+            </div>
         </div>
+        <style>
+            .dropdown-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: white;
+                min-width: 240px;
+                padding: 10px 0;
+                box-shadow: var(--shadow-premium);
+                border-radius: 12px;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(20px);
+                transition: var(--transition);
+                z-index: 1000;
+            }
+            .dropdown-item {
+                display: block;
+                padding: 12px 24px;
+                text-decoration: none;
+                color: var(--p-navy);
+                font-size: 14px;
+                font-weight: 600;
+                transition: background 0.3s;
+            }
+            .dropdown-item:hover {
+                background: var(--bg-soft);
+                color: var(--s-cyan);
+            }
+            .dropdown:hover .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(10px);
+            }
+        </style>
     `;
 
-    // Dropdown Logic
-    const dd = nav.querySelector('.dropdown');
-    const ddMenu = nav.querySelector('.dropdown-menu');
-    dd.addEventListener('mouseenter', () => { ddMenu.style.opacity = '1'; ddMenu.style.visibility = 'visible'; ddMenu.style.transform = 'translateY(10px)'; });
-    dd.addEventListener('mouseleave', () => { ddMenu.style.opacity = '0'; ddMenu.style.visibility = 'hidden'; ddMenu.style.transform = 'translateY(0)'; });
-
-    // FOOTER SUPREME
+    // PREMIUM FOOTER
     const footer = document.createElement('footer');
-    footer.style.background = 'var(--p-navy)';
-    footer.style.color = 'white';
-    footer.style.padding = '180px 0 60px';
+    footer.style.background = '#F8FAFC';
+    footer.style.padding = '120px 0 60px';
+    footer.style.borderTop = '1px solid rgba(0,0,0,0.05)';
     footer.innerHTML = `
         <div class="container">
-            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 80px; margin-bottom: 80px;">
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 60px; margin-bottom: 80px;">
                 <div>
-                    <!-- Logo Hack: Grayscale->Invert->Screen to make white bg transparent and black text white -->
-                    <img src="/logo.png?v=5" alt="Vivencia" style="height: 80px; margin-bottom: 32px; filter: grayscale(1) invert(1) brightness(2); mix-blend-mode: screen;">
-                    <p style="opacity: 0.6; font-size: 15px; line-height: 2; max-width: 400px;">The Elite School Skill Partner ensuring NEP 2020 professional execution within the premium academic ecosystem.</p>
+                    <img src="/logo.png" alt="Vivencia" style="height: 50px; margin-bottom: 30px;">
+                    <p style="color: var(--text-muted); font-size: 15px; line-height: 1.8; margin-bottom: 30px; max-width: 320px;">
+                        The School Skill Partner. We take absolute ownership of NEP 2020 skill execution for premium institutions.
+                    </p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy);"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy);"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy);"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy);"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
                 <div>
-                    <h4 style="font-family:var(--font-display); font-size:14px; letter-spacing:3px; text-transform:uppercase; margin-bottom:40px; color:var(--s-cyan);">Expertise</h4>
-                    <ul style="list-style:none; line-height:3; font-size:14px; font-weight:500;">
-                        <li><a href="/entrepreneurship" data-link style="color:white; text-decoration:none; opacity:0.7;">Entrepreneurship</a></li>
-                        <li><a href="/finance" data-link style="color:white; text-decoration:none; opacity:0.7;">Financial Literacy</a></li>
-                        <li><a href="/ai-robotics" data-link style="color:white; text-decoration:none; opacity:0.7;">AI & Robotics</a></li>
+                    <h4 style="color: var(--p-navy); margin-bottom: 30px; font-size: 18px;">Quick Links</h4>
+                    <ul style="list-style: none; padding: 0; display: grid; gap: 15px;">
+                        <li><a href="/about" data-link style="text-decoration:none; color:var(--text-muted); font-size:15px;">The Firm</a></li>
+                        <li><a href="/models" data-link style="text-decoration:none; color:var(--text-muted); font-size:15px;">Models</a></li>
+                        <li><a href="/contact" data-link style="text-decoration:none; color:var(--text-muted); font-size:15px;">Partner Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="font-family:var(--font-display); font-size:14px; letter-spacing:3px; text-transform:uppercase; margin-bottom:40px; color:var(--s-cyan);">Company</h4>
-                    <ul style="list-style:none; line-height:3; font-size:14px; font-weight:500;">
-                        <li><a href="/about" data-link style="color:white; text-decoration:none; opacity:0.7;">About Firm</a></li>
-                        <li><a href="/models" data-link style="color:white; text-decoration:none; opacity:0.7;">Execution Models</a></li>
-                        <li><a href="/contact" data-link style="color:white; text-decoration:none; opacity:0.7;">Partner Contact</a></li>
+                    <h4 style="color: var(--p-navy); margin-bottom: 30px; font-size: 18px;">Expertise</h4>
+                    <ul style="list-style: none; padding: 0; display: grid; gap: 15px;">
+                        <li><a href="/entrepreneurship" data-link style="text-decoration:none; color:var(--text-muted); font-size:15px;">Entrepreneurship</a></li>
+                        <li><a href="/finance" data-link style="text-decoration:none; color:var(--text-muted); font-size:15px;">Financial Literacy</a></li>
+                        <li><a href="/ai-robotics" data-link style="text-decoration:none; color:var(--text-muted); font-size:15px;">AI & Robotics</a></li>
                     </ul>
                 </div>
-                <div style="background:rgba(255,255,255,0.03); padding:40px; border-radius:8px;">
-                    <h4 style="font-family:var(--font-display); font-size:14px; letter-spacing:3px; text-transform:uppercase; margin-bottom:24px; color:white;">Institutional Office</h4>
-                    <p style="opacity:0.6; font-size:14px; line-height:2;">partner@vivencia.in</p>
-                    <p style="opacity:0.6; font-size:14px; line-height:2;">Hyderabad, Telangana</p>
-                    <p style="opacity:0.6; font-size:14px; line-height:2; margin-top:16px;">+91 97000 00000</p>
+                <div>
+                    <h4 style="color: var(--p-navy); margin-bottom: 30px; font-size: 18px;">Newsletter</h4>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">Stay updated with NEP 2020 insights.</p>
+                    <div style="display:flex; gap:10px;">
+                        <input type="email" placeholder="Your email" style="flex:1; padding:12px 20px; border-radius:30px; border:1px solid rgba(0,0,0,0.1); font-size:14px;">
+                        <button style="background:var(--s-cyan); color:white; border:none; padding:0 20px; border-radius:30px; font-weight:700; cursor:pointer;">Go</button>
+                    </div>
                 </div>
             </div>
-            <div style="padding-top:40px; border-top:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; font-size:12px; opacity:0.4; letter-spacing:1px;">
-                <span>© 2026 VIVENCIA ELITE. ALL RIGHTS RESERVED.</span>
-                <span>NEP 2020 COMPLIANT EXECUTION</span>
+            <div style="border-top: 1px solid rgba(0,0,0,0.05); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: var(--text-muted);">
+                <p>© 2026 Vivencia Elite. All Rights Reserved.</p>
+                <div style="display:flex; gap:30px;">
+                    <a href="#" style="text-decoration:none; color:inherit;">Privacy Policy</a>
+                    <a href="#" style="text-decoration:none; color:inherit;">Terms of Service</a>
+                </div>
             </div>
         </div>
+    </footer>
     `;
 
     const main = document.createElement('main');
-    main.style.marginTop = '0'; // Layout handles hero overlap
+    main.style.marginTop = '0';
     main.appendChild(content);
 
     layout.appendChild(nav);
