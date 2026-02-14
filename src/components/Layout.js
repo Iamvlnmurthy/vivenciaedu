@@ -11,7 +11,7 @@ export function Layout(content) {
 
     nav.innerHTML = `
         <div class="container nav-content">
-            <a href="/" data-link class="logo-container" style="display: flex; align-items: center; height: 80px; overflow: hidden;">
+            <a href="/" data-link class="logo-container" style="display: flex; align-items: center; height: 100px; overflow: hidden;">
                 <img src="/logo.png" alt="Vivencia" class="logo-main">
             </a>
             
@@ -103,25 +103,17 @@ export function Layout(content) {
         </form>
     `;
 
-    // FLOATING BUTTON
-    const whatsappBtn = document.createElement('div');
-    whatsappBtn.style.position = 'fixed';
-    whatsappBtn.style.bottom = '30px';
-    whatsappBtn.style.right = '30px';
-    whatsappBtn.style.width = '60px';
-    whatsappBtn.style.height = '60px';
-    whatsappBtn.style.borderRadius = '50%';
-    whatsappBtn.style.background = '#25D366';
-    whatsappBtn.style.color = 'white';
-    whatsappBtn.style.display = 'flex';
-    whatsappBtn.style.alignItems = 'center';
-    whatsappBtn.style.justifyContent = 'center';
-    whatsappBtn.style.fontSize = '32px';
-    whatsappBtn.style.boxShadow = '0 10px 30px rgba(37, 211, 102, 0.4)';
-    whatsappBtn.style.zIndex = '9999';
-    whatsappBtn.style.cursor = 'pointer';
-    whatsappBtn.style.transition = 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s';
-    whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
+    // SIDEBAR INTERACTIVE BUTTONS
+    const sidebar = document.createElement('div');
+    sidebar.className = 'sidebar-elite';
+    sidebar.innerHTML = `
+        <a class="sidebar-btn wa" id="sidebar-wa" title="WhatsApp Consultation"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+918886606701" class="sidebar-btn phone" title="Call Us"><i class="fas fa-phone-alt"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61575078729552" target="_blank" class="sidebar-btn fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/vivenciaedu" target="_blank" class="sidebar-btn x" title="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/vivencia_edu/" target="_blank" class="sidebar-btn ig" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@Vivenciaedu" target="_blank" class="sidebar-btn yt" title="YouTube"><i class="fab fa-youtube"></i></a>
+    `;
 
     // EVENTS
     let isOpen = false;
@@ -132,9 +124,9 @@ export function Layout(content) {
             modal.style.opacity = '1';
             modal.style.visibility = 'visible';
             modal.style.transform = 'translateY(0)';
-            whatsappBtn.style.transform = 'rotate(90deg)';
-            whatsappBtn.innerHTML = '<i class="fas fa-times"></i>';
-            whatsappBtn.style.background = '#ef4444'; // Red for close
+            const waIcon = sidebar.querySelector('#sidebar-wa i');
+            if (waIcon) waIcon.className = 'fas fa-times';
+            sidebar.querySelector('#sidebar-wa').style.background = '#ef4444';
         } else {
             closeModal();
         }
@@ -145,24 +137,21 @@ export function Layout(content) {
         modal.style.opacity = '0';
         modal.style.visibility = 'hidden';
         modal.style.transform = 'translateY(20px)';
-        whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
-        whatsappBtn.style.transform = 'rotate(0)';
-        whatsappBtn.style.background = '#25D366';
+        const waIcon = sidebar.querySelector('#sidebar-wa i');
+        if (waIcon) waIcon.className = 'fab fa-whatsapp';
+        sidebar.querySelector('#sidebar-wa').style.background = '#25D366';
     }
 
-    whatsappBtn.addEventListener('click', (e) => {
+    sidebar.querySelector('#sidebar-wa').addEventListener('click', (e) => {
         e.stopPropagation();
         toggleModal();
     });
 
     document.addEventListener('click', (e) => {
-        if (isOpen && !modal.contains(e.target) && !whatsappBtn.contains(e.target)) {
+        if (isOpen && !modal.contains(e.target) && !sidebar.contains(e.target)) {
             closeModal();
         }
     });
-
-    whatsappBtn.addEventListener('mouseenter', () => { if (!isOpen) whatsappBtn.style.transform = 'scale(1.1)'; });
-    whatsappBtn.addEventListener('mouseleave', () => { if (!isOpen) whatsappBtn.style.transform = 'scale(1)'; });
 
     // Modal Form Events
     setTimeout(() => {
@@ -206,7 +195,7 @@ export function Layout(content) {
                     </p>
                     <div style="display: flex; gap: 15px;">
                         <a href="https://www.facebook.com/profile.php?id=61575078729552" target="_blank" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy); transition: transform 0.2s;"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://x.com/vivenciaedu" target="_blank" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy); transition: transform 0.2s;"><i class="fab fa-twitter"></i></a> <!-- Using Twitter icon for X as FA 6.4 might not have X logo yet, or use fa-x-twitter if available -->
+                        <a href="https://x.com/vivenciaedu" target="_blank" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy); transition: transform 0.2s;"><i class="fab fa-x-twitter"></i></a> 
                         <a href="https://www.instagram.com/vivencia_edu/" target="_blank" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy); transition: transform 0.2s;"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/vivencia-edu-b3675035b" target="_blank" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy); transition: transform 0.2s;"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://www.youtube.com/@Vivenciaedu" target="_blank" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy); transition: transform 0.2s;"><i class="fab fa-youtube"></i></a>
@@ -253,14 +242,14 @@ export function Layout(content) {
     `;
 
     const main = document.createElement('main');
-    main.style.marginTop = '0';
+    main.className = 'main-content';
     main.appendChild(content);
 
     layout.appendChild(nav);
     layout.appendChild(main);
     layout.appendChild(footer);
     layout.appendChild(modal);
-    layout.appendChild(whatsappBtn);
+    layout.appendChild(sidebar);
 
     return layout;
 }

@@ -92,7 +92,7 @@ export async function Finance() {
             <div class="container">
                 <div class="reveal" style="max-width:800px; margin:0 auto;">
                     <div style="display: flex; justify-content: center; margin-bottom: 40px;">
-                        <img src="/finance_3d_icon_v2_1771049957590.png" alt="Finance 3D" style="height: 200px; mix-blend-mode: multiply; filter: contrast(1.1) brightness(1.1);">
+                        <img src="/finance_3d_icon_transparent_v2.png" alt="Finance 3D" style="height: 200px;">
                     </div>
                     <h2 style="margin-bottom:60px;">Money as a Lifeskill</h2>
                     <div class="glass-card" style="border-top:6px solid var(--s-cyan); border-left:none; padding:80px;">

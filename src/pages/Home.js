@@ -2,7 +2,7 @@ export async function Home() {
     const page = document.createElement('div');
     page.innerHTML = `
         <!-- SECTION 1: VISIONARY HERO 2.0 (LIGHT ELITE) -->
-        <section id="hero" style="min-height: 100vh; display: flex; align-items: center; padding: 40px 0; background: var(--bg-white); overflow: hidden; position: relative;">
+        <section id="hero" style="min-height: 100vh; display: flex; align-items: center; padding: 120px 0 60px; background: var(--bg-white); overflow: hidden; position: relative;">
             <!-- Light Mesh Gradients -->
             <div class="blob" style="top: -200px; right: -100px; background: radial-gradient(circle, rgba(0, 174, 239, 0.08) 0%, transparent 70%); width: 800px; height: 800px;"></div>
             <div class="blob" style="bottom: -100px; left: -100px; background: radial-gradient(circle, rgba(239, 91, 112, 0.05) 0%, transparent 70%); width: 600px; height: 600px;"></div>
@@ -92,17 +92,17 @@ export async function Home() {
                     </div>
 
                     <!-- 3. Friction Point 1 -->
-                    <div class="bento-item reveal" style="grid-column: span 2; grid-row: span 2; background: white; border-bottom: 8px solid var(--s-cyan);">
-                        <div style="font-size: 32px; color: var(--p-navy); margin-bottom: 24px; opacity: 0.9;"><i class="fas fa-user-clock"></i></div>
-                        <h4 style="font-size: 20px; color: var(--p-navy); margin-bottom: 12px; font-weight: 800;">Teacher <br>Exhaustion</h4>
-                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Academic staff are already at capacity with core syllabus.</p>
+                    <div class="bento-item reveal" style="grid-column: span 2; grid-row: span 3; background: white; border-bottom: 8px solid var(--s-cyan); justify-content: center; padding: 32px;">
+                        <div style="font-size: 32px; color: var(--p-navy); margin-bottom: 20px; opacity: 0.9;"><i class="fas fa-user-clock"></i></div>
+                        <h4 style="font-size: 20px; color: var(--p-navy); margin-bottom: 12px; font-weight: 800; line-height: 1.2;">Teacher <br>Exhaustion</h4>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5; margin: 0;">Academic staff are already at capacity with core syllabus.</p>
                     </div>
 
                     <!-- 4. Friction Point 2 -->
-                    <div class="bento-item reveal" style="grid-column: span 3; grid-row: span 2; background: var(--p-navy); color: white;">
-                        <div style="font-size: 32px; color: var(--s-cyan); margin-bottom: 24px;"><i class="fas fa-puzzle-piece"></i></div>
-                        <h4 style="font-size: 20px; color: white; margin-bottom: 12px; font-weight: 800;">Execution <br>Gap</h4>
-                        <p style="font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6;">Designing curriculum mandates requires high-fidelity expertise that Schools often lack outside academics.</p>
+                    <div class="bento-item reveal" style="grid-column: span 3; grid-row: span 3; background: var(--p-brand-blue); color: white; border-radius: 48px; justify-content: center; padding: 40px;">
+                        <div style="font-size: 32px; color: var(--p-blue); margin-bottom: 24px;"><i class="fas fa-puzzle-piece"></i></div>
+                        <h4 style="font-size: 24px; color: white; margin-bottom: 16px; font-weight: 800; line-height: 1.2;">Execution <br>Gap</h4>
+                        <p style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6; margin: 0;">Designing curriculum mandates is different from delivering classroom results.</p>
                     </div>
                 </div>
             </div>
@@ -240,22 +240,18 @@ export async function Home() {
                     </div>
 
                     <!-- 2. Financial Literacy (The Light Monolith) -->
-                    <div class="bento-item" style="grid-column: span 5; grid-row: span 6; background: linear-gradient(135deg, #F5FCFF 0%, #D6F0FF 100%); border: 1px solid rgba(0, 72, 146, 0.1); padding: 30px; position: relative; overflow: hidden; display: flex; flex-direction: column;">
-                        <div style="position: relative; z-index: 3; flex: 1; display: flex; flex-direction: column;">
+                    <div class="bento-item" style="grid-column: span 5; grid-row: span 6; background-image: linear-gradient(135deg, #F5FCFF 0%, #D6F0FF 100%), url('/finance_3d_icon_final_1771050114806.png'); background-position: center, 110% 110%; background-size: cover, 100% auto; background-repeat: no-repeat; background-blend-mode: multiply; border: 1px solid rgba(0, 72, 146, 0.1); padding: 50px 40px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="position: relative; z-index: 3;">
                             <h3 style="font-size: 36px; margin-bottom: 16px; color: #004892; font-family: var(--font-display); font-weight: 800; line-height: 1.1;">Financial <br>Literacy</h3>
-                            <p style="font-size: 14px; color: #4F6B8C; line-height: 1.6; margin-bottom: 24px; max-width: 300px;">Wealth creation, compounding, and simulation-led mastery.</p>
+                            <p style="font-size: 15px; color: #4F6B8C; line-height: 1.6; margin-bottom: 32px; max-width: 280px;">Wealth creation, compounding, and simulation-led mastery.</p>
                             
-                            <div style="display: flex; flex-direction: column; gap: 12px; max-width: 250px;">
-                                <div style="background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(0, 72, 146, 0.15); padding: 10px 20px; border-radius: 12px; font-weight: 800; color: #004892; font-size: 13px; box-shadow: 0 4px 12px rgba(0, 72, 146, 0.05);">Market Simulations</div>
-                                <div style="background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(0, 72, 146, 0.15); padding: 10px 20px; border-radius: 12px; font-weight: 800; color: #004892; font-size: 13px; box-shadow: 0 4px 12px rgba(0, 72, 146, 0.05);">Asset Management</div>
+                            <div style="display: flex; flex-direction: column; gap: 12px; max-width: 240px; margin-bottom: 40px;">
+                                <div style="background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(0, 72, 146, 0.15); padding: 12px 24px; border-radius: 14px; font-weight: 800; color: #004892; font-size: 13px; box-shadow: 0 4px 12px rgba(0, 72, 146, 0.05);">Market Simulations</div>
+                                <div style="background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(0, 72, 146, 0.15); padding: 12px 24px; border-radius: 14px; font-weight: 800; color: #004892; font-size: 13px; box-shadow: 0 4px 12px rgba(0, 72, 146, 0.05);">Asset Management</div>
                             </div>
                         </div>
                         
-                        <div style="position: absolute; bottom: 0; right: 0; width: 100%; height: 55%; z-index: 1;">
-                            <img src="/finance_3d_icon_v2_1771049957590.png" alt="Finance" style="position: absolute; bottom: -20px; right: -20px; height: 100%; width: auto; opacity: 1; pointer-events: none; mix-blend-mode: multiply; filter: contrast(1.1) brightness(1.1);">
-                        </div>
-                        
-                        <a href="/finance" data-link style="margin-top: auto; text-decoration: none; color: #004892; font-weight: 800; text-transform:uppercase; letter-spacing:3px; font-size:13px; display: flex; align-items: center; gap: 12px; position: relative; z-index: 3;">Explore Domain <i class="fas fa-arrow-right"></i></a>
+                        <a href="/finance" data-link style="text-decoration: none; color: #004892; font-weight: 800; text-transform:uppercase; letter-spacing:3px; font-size:13px; display: flex; align-items: center; gap: 12px; position: relative; z-index: 3; margin-top: 20px;">Explore Domain <i class="fas fa-arrow-right"></i></a>
                     </div>
 
                     <!-- 3. AI & Robotics (Bottom Left - Span 3) -->
