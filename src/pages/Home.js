@@ -157,20 +157,42 @@ export async function Home() {
             </div>
         </section>
 
-        <!-- SECTION 4: ZERO BURDEN (BUBBLE TAGS) -->
-        <section id="zero-load" class="bg-subtle" style="min-height: 100vh; display: flex; align-items: center; padding: 60px 0; background: var(--bg-soft);">
-            <div class="container text-center">
+        <!-- SECTION 4: ZERO LOAD PROMISE (PREMIUM FLOATING TAGS) -->
+        <section id="zero-load" style="min-height: 100vh; display: flex; align-items: center; padding: 120px 0; background: var(--bg-white); position: relative; overflow: hidden;">
+            <!-- Atmospheric Depth Blobs -->
+            <div class="blob" style="top: 10%; right: -100px; background: radial-gradient(circle, rgba(0, 174, 239, 0.05) 0%, transparent 70%); width: 600px; height: 600px;"></div>
+            <div class="blob" style="bottom: 10%; left: -100px; background: radial-gradient(circle, rgba(239, 91, 112, 0.03) 0%, transparent 70%); width: 500px; height: 500px;"></div>
+            
+            <div class="container text-center" style="position: relative; z-index: 2;">
                 <div class="reveal">
-                    <span class="label-sup" style="color: var(--s-cyan); font-weight: 800;">Zero Load Promise</span>
-                    <h2 style="margin: 16px 0 32px; font-size: 56px; color: var(--p-navy); font-weight: 800;">What You <span class="script-font" style="color: var(--s-cyan); font-size: 1.2em;">Don't Worry</span> About.</h2>
+                    <span class="label-sup" style="color: var(--p-blue); font-weight: 800; letter-spacing: 12px; margin-bottom: 32px;">Zero Load Promise</span>
+                    <h2 style="margin: 24px 0 64px; font-size: clamp(32px, 5vw, 64px); color: var(--p-navy); font-weight: 800; line-height: 1.1;">What You <span class="script-font" style="color: var(--p-blue); font-size: 1.2em;">Don't Worry</span> About.</h2>
                     
-                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; max-width: 1000px; margin: 0 auto;">
-                        <div class="card-premium" style="padding: 24px 48px; border-radius: 100px; font-weight: 800; color: var(--p-navy); font-size: 16px;">No Lesson Planning</div>
-                        <div class="card-premium" style="padding: 24px 48px; border-radius: 100px; font-weight: 800; color: var(--p-navy); font-size: 16px;">No Teacher Training</div>
-                        <div class="card-premium" style="padding: 24px 48px; border-radius: 100px; font-weight: 800; color: var(--p-navy); font-size: 16px;">No Vendor Chaos</div>
-                        <div class="card-premium" style="padding: 24px 48px; border-radius: 100px; font-weight: 800; color: var(--p-navy); font-size: 16px;">No Compliance Stress</div>
-                        <div class="card-premium" style="padding: 24px 48px; border-radius: 100px; font-weight: 800; color: var(--p-navy); font-size: 16px;">No Outcome Confusion</div>
-                        <div class="card-premium" style="padding: 24px 48px; border-radius: 100px; font-weight: 800; color: var(--p-navy); font-size: 16px;">No Scheduling Conflicts</div>
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; max-width: 1100px; margin: 0 auto;">
+                        <div class="zero-load-tag" style="animation-delay: 0s;">
+                            <i class="fas fa-book-open"></i>
+                            No Lesson Planning
+                        </div>
+                        <div class="zero-load-tag" style="animation-delay: -1.2s;">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            No Teacher Training
+                        </div>
+                        <div class="zero-load-tag" style="animation-delay: -2.5s;">
+                            <i class="fas fa-boxes"></i>
+                            No Vendor Chaos
+                        </div>
+                        <div class="zero-load-tag" style="animation-delay: -0.8s;">
+                            <i class="fas fa-file-signature"></i>
+                            No Compliance Stress
+                        </div>
+                        <div class="zero-load-tag" style="animation-delay: -3.7s;">
+                            <i class="fas fa-chart-pie"></i>
+                            No Outcome Confusion
+                        </div>
+                        <div class="zero-load-tag" style="animation-delay: -1.9s;">
+                            <i class="fas fa-calendar-alt"></i>
+                            No Scheduling Conflicts
+                        </div>
                     </div>
                 </div>
             </div>
