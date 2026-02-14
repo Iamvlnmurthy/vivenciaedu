@@ -71,6 +71,126 @@ export function Layout(content) {
         </style>
     `;
 
+    // WHATSAPP MODAL
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.bottom = '100px';
+    modal.style.right = '30px';
+    modal.style.width = '350px';
+    modal.style.maxWidth = 'calc(100vw - 60px)';
+    modal.style.backgroundColor = 'white';
+    modal.style.borderRadius = '20px';
+    modal.style.boxShadow = '0 20px 40px rgba(0,0,0,0.2)';
+    modal.style.zIndex = '10000';
+    modal.style.padding = '24px';
+    modal.style.opacity = '0';
+    modal.style.visibility = 'hidden';
+    modal.style.transform = 'translateY(20px)';
+    modal.style.transition = 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
+    modal.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <h5 style="margin:0; color:var(--p-navy); font-weight:800; font-size:16px;">Institutional Consultation</h5>
+            <button id="close-modal" style="background:none; border:none; cursor:pointer; font-size:24px; color:var(--text-muted); line-height:1;">&times;</button>
+        </div>
+        <form id="wa-modal-form" style="display:grid; gap:16px;">
+            <input type="text" id="wa-school" placeholder="School Name" required style="padding:12px; border:1px solid rgba(0,0,0,0.1); border-radius:8px; font-size:13px; outline:none; font-family:inherit; width:100%; box-sizing:border-box;">
+            <input type="text" id="wa-rep" placeholder="Representative Name" required style="padding:12px; border:1px solid rgba(0,0,0,0.1); border-radius:8px; font-size:13px; outline:none; font-family:inherit; width:100%; box-sizing:border-box;">
+            <input type="email" id="wa-email" placeholder="Official Email" required style="padding:12px; border:1px solid rgba(0,0,0,0.1); border-radius:8px; font-size:13px; outline:none; font-family:inherit; width:100%; box-sizing:border-box;">
+            <textarea id="wa-message" rows="3" placeholder="How can we help?" required style="padding:12px; border:1px solid rgba(0,0,0,0.1); border-radius:8px; font-size:13px; outline:none; font-family:inherit; resize:none; width:100%; box-sizing:border-box;"></textarea>
+            <button type="submit" style="background:#25D366; color:white; border:none; padding:12px; border-radius:8px; font-weight:700; cursor:pointer; font-size:14px; display:flex; align-items:center; justify-content:center; gap:8px; width:100%;">
+                <i class="fab fa-whatsapp"></i> Start Chat
+            </button>
+        </form>
+    `;
+
+    // FLOATING BUTTON
+    const whatsappBtn = document.createElement('div');
+    whatsappBtn.style.position = 'fixed';
+    whatsappBtn.style.bottom = '30px';
+    whatsappBtn.style.right = '30px';
+    whatsappBtn.style.width = '60px';
+    whatsappBtn.style.height = '60px';
+    whatsappBtn.style.borderRadius = '50%';
+    whatsappBtn.style.background = '#25D366';
+    whatsappBtn.style.color = 'white';
+    whatsappBtn.style.display = 'flex';
+    whatsappBtn.style.alignItems = 'center';
+    whatsappBtn.style.justifyContent = 'center';
+    whatsappBtn.style.fontSize = '32px';
+    whatsappBtn.style.boxShadow = '0 10px 30px rgba(37, 211, 102, 0.4)';
+    whatsappBtn.style.zIndex = '9999';
+    whatsappBtn.style.cursor = 'pointer';
+    whatsappBtn.style.transition = 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s';
+    whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
+
+    // EVENTS
+    let isOpen = false;
+
+    function toggleModal() {
+        isOpen = !isOpen;
+        if (isOpen) {
+            modal.style.opacity = '1';
+            modal.style.visibility = 'visible';
+            modal.style.transform = 'translateY(0)';
+            whatsappBtn.style.transform = 'rotate(90deg)';
+            whatsappBtn.innerHTML = '<i class="fas fa-times"></i>';
+            whatsappBtn.style.background = '#ef4444'; // Red for close
+        } else {
+            closeModal();
+        }
+    }
+
+    function closeModal() {
+        isOpen = false;
+        modal.style.opacity = '0';
+        modal.style.visibility = 'hidden';
+        modal.style.transform = 'translateY(20px)';
+        whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
+        whatsappBtn.style.transform = 'rotate(0)';
+        whatsappBtn.style.background = '#25D366';
+    }
+
+    whatsappBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleModal();
+    });
+
+    document.addEventListener('click', (e) => {
+        if (isOpen && !modal.contains(e.target) && !whatsappBtn.contains(e.target)) {
+            closeModal();
+        }
+    });
+
+    whatsappBtn.addEventListener('mouseenter', () => { if (!isOpen) whatsappBtn.style.transform = 'scale(1.1)'; });
+    whatsappBtn.addEventListener('mouseleave', () => { if (!isOpen) whatsappBtn.style.transform = 'scale(1)'; });
+
+    // Modal Form Events
+    setTimeout(() => {
+        const closeBtn = modal.querySelector('#close-modal');
+        const form = modal.querySelector('#wa-modal-form');
+
+        if (closeBtn) closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeModal();
+        });
+
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const school = modal.querySelector('#wa-school').value;
+                const rep = modal.querySelector('#wa-rep').value;
+                const email = modal.querySelector('#wa-email').value;
+                const msg = modal.querySelector('#wa-message').value;
+
+                const whatsappMsg = `*New Institutional Inquiry*\n\n*School:* ${school}\n*Representative:* ${rep}\n*Email:* ${email}\n*Message:* ${msg}`;
+                const encodedMsg = encodeURIComponent(whatsappMsg);
+                window.open(`https://wa.me/918886606701?text=${encodedMsg}`, '_blank');
+                closeModal();
+                form.reset();
+            });
+        }
+    }, 100);
+
     // PREMIUM FOOTER
     const footer = document.createElement('footer');
     footer.style.background = '#F8FAFC';
@@ -85,10 +205,17 @@ export function Layout(content) {
                         The School Skill Partner. We take absolute ownership of NEP 2020 skill execution for premium institutions.
                     </p>
                     <div style="display: flex; gap: 15px;">
-                        <a href="#" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy);"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy);"><i class="fab fa-twitter"></i></a>
-                        <a href="#" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy);"><i class="fab fa-instagram"></i></a>
-                        <a href="#" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy);"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61575078729552" target="_blank" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy); transition: transform 0.2s;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/vivenciaedu" target="_blank" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy); transition: transform 0.2s;"><i class="fab fa-twitter"></i></a> <!-- Using Twitter icon for X as FA 6.4 might not have X logo yet, or use fa-x-twitter if available -->
+                        <a href="https://www.instagram.com/vivencia_edu/" target="_blank" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy); transition: transform 0.2s;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/vivencia-edu-b3675035b" target="_blank" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy); transition: transform 0.2s;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@Vivenciaedu" target="_blank" style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-premium); color:var(--p-navy); transition: transform 0.2s;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div style="margin-top: 30px; font-size: 14px; color: var(--text-muted); line-height: 1.6;">
+                        <strong>Headquarters:</strong><br>
+                        Plot No: 288, Road No: 78,<br>
+                        Jubilee Hills, Hyderabad – 500033,<br>
+                        Telangana, India
                     </div>
                 </div>
                 <div>
@@ -108,12 +235,11 @@ export function Layout(content) {
                     </ul>
                 </div>
                 <div>
-                    <h4 style="color: var(--p-navy); margin-bottom: 30px; font-size: 18px;">Newsletter</h4>
-                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">Stay updated with NEP 2020 insights.</p>
-                    <div style="display:flex; gap:10px;">
-                        <input type="email" placeholder="Your email" style="flex:1; padding:12px 20px; border-radius:30px; border:1px solid rgba(0,0,0,0.1); font-size:14px;">
-                        <button style="background:var(--s-cyan); color:white; border:none; padding:0 20px; border-radius:30px; font-weight:700; cursor:pointer;">Go</button>
-                    </div>
+                    <h4 style="color: var(--p-navy); margin-bottom: 30px; font-size: 18px;">Contact Us</h4>
+                    <ul style="list-style: none; padding: 0; display: grid; gap: 15px;">
+                         <li style="color:var(--text-muted); font-size:15px;"><i class="fas fa-phone-alt" style="margin-right: 10px; color: var(--s-cyan);"></i> +91-88866 06701</li>
+                         <li style="color:var(--text-muted); font-size:15px;"><i class="fas fa-envelope" style="margin-right: 10px; color: var(--s-cyan);"></i> info@vivenciaedu.com</li>
+                    </ul>
                 </div>
             </div>
             <div style="border-top: 1px solid rgba(0,0,0,0.05); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: var(--text-muted);">
@@ -124,7 +250,6 @@ export function Layout(content) {
                 </div>
             </div>
         </div>
-    </footer>
     `;
 
     const main = document.createElement('main');
@@ -134,6 +259,8 @@ export function Layout(content) {
     layout.appendChild(nav);
     layout.appendChild(main);
     layout.appendChild(footer);
+    layout.appendChild(modal);
+    layout.appendChild(whatsappBtn);
 
     return layout;
 }

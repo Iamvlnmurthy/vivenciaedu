@@ -1,7 +1,7 @@
 export async function About() {
     const page = document.createElement('div');
     page.innerHTML = `
-        <section style="background: radial-gradient(circle at top left, rgba(0, 42, 102, 0.05), transparent 800px); min-height: 100vh; display: flex; align-items: center;">
+        <section class="elite-section" style="background: radial-gradient(circle at top left, rgba(0, 42, 102, 0.05), transparent 800px); min-height: 100vh; display: flex; align-items: center;">
             <div class="container text-center">
                 <div class="reveal">
                     <span class="label-sup" style="color: var(--p-navy); opacity: 0.8;">Operational Excellence</span>
@@ -11,7 +11,7 @@ export async function About() {
             </div>
         </section>
 
-        <section class="bg-subtle" style="min-height: 100vh; display: flex; align-items: center;">
+        <section class="bg-subtle elite-section" style="min-height: 100vh; display: flex; align-items: center;">
             <div class="container">
                 <div class="reveal">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: center;">
@@ -28,14 +28,14 @@ export async function About() {
             </div>
         </section>
 
-        <section style="min-height: 100vh; display: flex; align-items: center;">
+        <section class="elite-section" style="min-height: 100vh; display: flex; align-items: center;">
             <div class="container">
                 <div class="reveal text-center" style="margin-bottom:100px;">
                     <span class="label-sup">Core Philosophy</span>
                     <h2>The Vivencia Standard</h2>
                 </div>
                 
-                <div class="reveal" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px;">
+                <div class="reveal elite-grid-3" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px;">
                     <div class="glass-card" style="padding: 40px; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.6); border-radius: 24px; transition: transform 0.3s ease;">
                         <h4 style="margin-bottom:20px; color:var(--p-navy); font-size: 24px; font-weight: 800;">Zero Burden</h4>
                         <p style="font-size:16px; color:var(--text-muted); line-height:1.8;">We don't ask your teachers to plan lessons. We arrive with our own mentors and materials.</p>

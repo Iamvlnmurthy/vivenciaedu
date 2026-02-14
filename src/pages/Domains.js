@@ -1,7 +1,7 @@
 export async function Entrepreneurship() {
     const page = document.createElement('div');
     page.innerHTML = `
-        <section style="min-height: 100vh; display: flex; align-items: center; background: radial-gradient(circle at top right, rgba(245, 146, 30, 0.05), transparent 800px);">
+        <section class="elite-section" style="min-height: 100vh; display: flex; align-items: center; background: radial-gradient(circle at top right, rgba(245, 146, 30, 0.05), transparent 800px);">
             <div class="container text-center">
                 <div class="reveal">
                     <span class="label-sup" style="color:var(--accent-orange);">Domain Mastery</span>
@@ -11,12 +11,15 @@ export async function Entrepreneurship() {
             </div>
         </section>
 
-        <section class="bg-subtle" style="min-height: 100vh; display: flex; align-items: center;">
+        <section class="bg-subtle elite-section" style="min-height: 100vh; display: flex; align-items: center;">
             <div class="container">
                 <div class="reveal">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: center;">
-                        <div class="glass-card" style="border-left:6px solid var(--accent-orange);">
-                            <p style="font-family:var(--font-display); font-size:24px; font-weight:600; color:var(--p-navy); line-height:1.6;">"Entrepreneurship at Vivencia is not about starting businesses early. It is about building thinking, confidence, and problem-solving skills early."</p>
+                        <div style="position: relative;">
+                            <img src="/entrepreneurship_3d_icon_final_1771050098762.png" alt="Entrepreneurship 3D" style="width: 100%; max-width: 400px; transform: perspective(1000px) rotateY(-10deg); mix-blend-mode: multiply; filter: contrast(1.05) brightness(1.05);">
+                            <div class="glass-card" style="border-left:6px solid var(--accent-orange); margin-top: -40px; position: relative; z-index: 2;">
+                                <p style="font-family:var(--font-display); font-size:20px; font-weight:600; color:var(--p-navy); line-height:1.6;">"Entrepreneurship at Vivencia is not about starting businesses early. It is about building thinking, confidence, and problem-solving skills early."</p>
+                            </div>
                         </div>
                         <div>
                             <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:20px; font-family:var(--font-display);">
@@ -43,13 +46,13 @@ export async function Entrepreneurship() {
             </div>
         </section>
 
-        <section style="min-height: 100vh; display: flex; align-items: center;">
+        <section class="elite-section" style="min-height: 100vh; display: flex; align-items: center;">
             <div class="container">
                 <div class="reveal text-center" style="margin-bottom:80px;">
                     <span class="label-sup" style="color: var(--p-navy); opacity: 0.8;">Learning Roadmap</span>
                     <h2 style="color: var(--p-navy);">Age-Appropriate Tiers</h2>
                 </div>
-                <div class="reveal" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px;">
+                <div class="reveal elite-grid-3" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px;">
                     <div class="glass-card" style="padding: 40px; background: white; border: 1px solid rgba(247, 148, 30, 0.1); border-radius: 20px; box-shadow: 0 10px 30px rgba(247, 148, 30, 0.05);">
                         <div style="background: rgba(247, 148, 30, 0.1); color: var(--accent-orange); font-weight: 800; font-size: 12px; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 16px;">CLASSES 3–5</div>
                         <h4 style="margin-bottom:12px; color:var(--p-navy); font-size: 20px; font-weight: 700;">Curiosity & Creativity</h4>
@@ -75,7 +78,7 @@ export async function Entrepreneurship() {
 export async function Finance() {
     const page = document.createElement('div');
     page.innerHTML = `
-        <section style="min-height: 100vh; display: flex; align-items: center; background: radial-gradient(circle at top right, rgba(51, 181, 229, 0.05), transparent 800px);">
+        <section class="elite-section" style="min-height: 100vh; display: flex; align-items: center; background: radial-gradient(circle at top right, rgba(51, 181, 229, 0.05), transparent 800px);">
             <div class="container text-center">
                 <div class="reveal">
                     <span class="label-sup" style="color:var(--s-cyan);">Domain Mastery</span>
@@ -85,12 +88,15 @@ export async function Finance() {
             </div>
         </section>
 
-        <section class="bg-subtle text-center" style="min-height: 100vh; display: flex; align-items: center;">
+        <section class="bg-subtle elite-section text-center" style="min-height: 100vh; display: flex; align-items: center;">
             <div class="container">
                 <div class="reveal" style="max-width:800px; margin:0 auto;">
+                    <div style="display: flex; justify-content: center; margin-bottom: 40px;">
+                        <img src="/finance_3d_icon_v2_1771049957590.png" alt="Finance 3D" style="height: 200px; mix-blend-mode: multiply; filter: contrast(1.1) brightness(1.1);">
+                    </div>
                     <h2 style="margin-bottom:60px;">Money as a Lifeskill</h2>
                     <div class="glass-card" style="border-top:6px solid var(--s-cyan); border-left:none; padding:80px;">
-                        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px;">
+                        <div class="elite-grid-3" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px;">
                             <div style="text-align: left; padding: 24px; border-left: 4px solid var(--s-cyan); background: rgba(51, 181, 229, 0.05); border-radius: 0 12px 12px 0;">
                                 <h4 style="color:var(--p-navy); font-size: 20px; font-weight: 800; margin-bottom: 8px;">Classes 3–5</h4>
                                 <div style="font-size: 12px; font-weight: 700; color: var(--s-cyan); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Concept</div>
@@ -118,7 +124,7 @@ export async function Finance() {
 export async function AI() {
     const page = document.createElement('div');
     page.innerHTML = `
-        <section style="min-height: 100vh; display: flex; align-items: center; background: radial-gradient(circle at top right, rgba(233, 73, 128, 0.05), transparent 800px);">
+        <section class="elite-section" style="min-height: 100vh; display: flex; align-items: center; background: radial-gradient(circle at top right, rgba(233, 73, 128, 0.05), transparent 800px);">
             <div class="container text-center">
                 <div class="reveal">
                     <span class="label-sup" style="color:var(--accent-pink);">Domain Mastery</span>
@@ -128,12 +134,15 @@ export async function AI() {
             </div>
         </section>
 
-        <section class="bg-subtle text-center" style="min-height: 100vh; display: flex; align-items: center;">
+        <section class="bg-subtle elite-section text-center" style="min-height: 100vh; display: flex; align-items: center;">
             <div class="container">
                 <div class="reveal" style="max-width:800px; margin:0 auto;">
                     <div class="glass-card" style="border-top:6px solid var(--accent-pink); border-left:none; padding:80px;">
+                        <div style="display: flex; justify-content: center; margin-bottom: 40px;">
+                            <img src="/ai_robotics_3d_icon_final_1771050129801.png" alt="AI 3D" style="height: 200px; mix-blend-mode: multiply; filter: contrast(1.05) brightness(1.05);">
+                        </div>
                         <h2 style="margin-bottom:40px;">Technology Capability</h2>
-                        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px; text-align:left;">
+                        <div class="elite-grid-3" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px; text-align:left;">
                             <div style="padding: 24px; background: white; border-radius: 16px; border: 1px solid rgba(239, 91, 112, 0.1); box-shadow: 0 4px 12px rgba(239, 91, 112, 0.05);">
                                 <h5 style="color:var(--p-navy); font-size: 18px; font-weight: 800; margin-bottom: 8px;">Exploratory</h5>
                                 <div style="font-size: 11px; color: var(--accent-pink); font-weight: 700; margin-bottom: 12px;">CLASSES 3-5</div>

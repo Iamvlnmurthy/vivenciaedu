@@ -47,7 +47,7 @@ export async function Home() {
                     </div>
                     
                     <!-- Monolithic Glass Badge (Light) -->
-                    <div class="glass-elite" style="position: absolute; bottom: 60px; left: -80px; padding: 40px 56px; display: flex; align-items: center; gap: 32px; border-radius: 32px; background: rgba(255,255,255,0.8); border-color: white;">
+                    <div class="glass-elite" style="position: absolute; bottom: 60px; left: -40px; padding: 40px 56px; display: flex; align-items: center; gap: 32px; border-radius: 32px; background: rgba(255,255,255,0.8); border-color: white; box-shadow: 0 40px 80px rgba(0, 42, 102, 0.1);">
                         <div style="width: 72px; height: 72px; border-radius: 20px; background: var(--s-cyan-muted); display: flex; align-items: center; justify-content: center; color: var(--s-cyan); font-size: 32px;">
                             <i class="fas fa-crown"></i>
                         </div>
@@ -69,7 +69,7 @@ export async function Home() {
                     <!-- 1. The Monolith: Vision Video -->
                     <div class="bento-item reveal" style="grid-column: span 7; grid-row: span 5; padding: 0; background: #000; border-radius: 48px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 40px 100px rgba(0,0,0,0.3);">
                         <video id="founder-video" autoplay muted playsinline loop style="width:100%; height:100%; object-fit:cover; opacity: 0.9;">
-                            <source src="/Founder's Note.mp4" type="video/mp4">
+                            <source src="/founders_note.mp4" type="video/mp4">
                         </video>
                         <div class="glass-elite" style="position: absolute; bottom: 32px; left: 32px; right: 32px; padding: 24px; border-radius: 20px; border-color: rgba(255,255,255,0.2);">
                             <div style="display: flex; align-items: center; gap: 20px;">
@@ -229,44 +229,44 @@ export async function Home() {
                     <h2 style="font-size: 64px; color: var(--p-navy); font-weight: 800;">Supreme <span class="script-font" style="color: var(--s-cyan); font-size: 1.2em;">NEP 2020</span> Domains.</h2>
                 </div>
                 
-                <div class="reveal bento-grid" style="grid-template-rows: repeat(6, 12vh); height: 74vh; gap: 24px; max-width: 1200px; margin: 0 auto; width: 100%;">
+                <div class="reveal bento-grid" style="grid-template-rows: repeat(6, 10vh); height: auto; gap: 20px; max-width: 1200px; margin: 0 auto; width: 100%;">
                     <!-- 1. Entrepreneurship (Top Left - Span 3) -->
-                    <div class="bento-item" style="grid-column: span 7; grid-row: span 3; background: #FFF9F2; border: 1px solid rgba(247, 148, 30, 0.1); padding: 40px; position: relative; overflow: hidden; display: flex; flex-direction: column;">
-                        <img src="/entrepreneurship_3d_icon_final_1771050098762.png" alt="Entrepreneurship" style="position: absolute; top: 5%; right: -5%; height: 90%; width: auto; opacity: 1; transform: rotate(-5deg); pointer-events: none; z-index: 1; mix-blend-mode: multiply;">
-                        <span style="background: rgba(247, 148, 30, 0.1); color: #C05621; padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; align-self: flex-start; position: relative; z-index: 2;">High Impact</span>
-                        <h3 style="font-size: 32px; margin: 12px 0 12px; color: #7B341E; font-family: var(--font-display); font-weight: 800; line-height: 1.1; position: relative; z-index: 2;">Young <br>Entrepreneurship</h3>
-                        <p style="font-size: 14px; color: #9C4221; line-height: 1.5; max-width: 320px; opacity: 0.9; position: relative; z-index: 2;">Students identify real problems, build prototypes, and pitch solutions to industry titans.</p>
-                        <a href="/entrepreneurship" data-link style="margin-top: auto; text-decoration: none; color: #7B341E; font-weight: 800; text-transform:uppercase; letter-spacing:3px; font-size:13px; display: flex; align-items: center; gap: 12px; position: relative; z-index: 2;">Explore Domain <i class="fas fa-arrow-right"></i></a>
+                    <div class="bento-item" style="grid-column: span 7; grid-row: span 3; background: #FFF9F2; border: 1px solid rgba(247, 148, 30, 0.1); padding: 30px; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+                        <img src="/entrepreneurship_3d_icon_final_1771050098762.png" alt="Entrepreneurship" style="position: absolute; top: 10%; right: -12%; height: 80%; width: auto; opacity: 1; transform: rotate(-5deg); pointer-events: none; z-index: 1; mix-blend-mode: multiply; filter: contrast(1.05) brightness(1.05);">
+                        <span style="background: rgba(247, 148, 30, 0.1); color: #C05621; padding: 6px 16px; border-radius: 50px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; align-self: flex-start; position: relative; z-index: 2;">High Impact</span>
+                        <h3 style="font-size: 28px; margin: 8px 0 8px; color: #7B341E; font-family: var(--font-display); font-weight: 800; line-height: 1.1; position: relative; z-index: 2; max-width: 60%;">Young <br>Entrepreneurship</h3>
+                        <p style="font-size: 13px; color: #9C4221; line-height: 1.4; max-width: 60%; opacity: 0.9; position: relative; z-index: 2;">Students identify real problems, build prototypes, and pitch solutions to industry titans.</p>
+                        <a href="/entrepreneurship" data-link style="margin-top: auto; text-decoration: none; color: #7B341E; font-weight: 800; text-transform:uppercase; letter-spacing:3px; font-size:12px; display: flex; align-items: center; gap: 12px; position: relative; z-index: 2;">Explore Domain <i class="fas fa-arrow-right"></i></a>
                     </div>
 
                     <!-- 2. Financial Literacy (The Light Monolith) -->
-                    <div class="bento-item" style="grid-column: span 5; grid-row: span 6; background: linear-gradient(135deg, #F5FCFF 0%, #D6F0FF 100%); border: 1px solid rgba(0, 72, 146, 0.1); padding: 40px; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+                    <div class="bento-item" style="grid-column: span 5; grid-row: span 6; background: linear-gradient(135deg, #F5FCFF 0%, #D6F0FF 100%); border: 1px solid rgba(0, 72, 146, 0.1); padding: 30px; position: relative; overflow: hidden; display: flex; flex-direction: column;">
                         <div style="position: relative; z-index: 3; flex: 1; display: flex; flex-direction: column;">
-                            <h3 style="font-size: 42px; margin-bottom: 20px; color: #004892; font-family: var(--font-display); font-weight: 800; line-height: 1.1;">Financial <br>Literacy</h3>
-                            <p style="font-size: 15px; color: #4F6B8C; line-height: 1.8; margin-bottom: 32px; max-width: 300px;">Wealth creation, compounding, and simulation-led mastery.</p>
+                            <h3 style="font-size: 36px; margin-bottom: 16px; color: #004892; font-family: var(--font-display); font-weight: 800; line-height: 1.1;">Financial <br>Literacy</h3>
+                            <p style="font-size: 14px; color: #4F6B8C; line-height: 1.6; margin-bottom: 24px; max-width: 300px;">Wealth creation, compounding, and simulation-led mastery.</p>
                             
-                            <div style="display: flex; flex-direction: column; gap: 16px; max-width: 250px;">
-                                <div style="background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(0, 72, 146, 0.15); padding: 14px 24px; border-radius: 12px; font-weight: 800; color: #004892; font-size: 14px; box-shadow: 0 4px 12px rgba(0, 72, 146, 0.05);">Market Simulations</div>
-                                <div style="background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(0, 72, 146, 0.15); padding: 14px 24px; border-radius: 12px; font-weight: 800; color: #004892; font-size: 14px; box-shadow: 0 4px 12px rgba(0, 72, 146, 0.05);">Asset Management</div>
+                            <div style="display: flex; flex-direction: column; gap: 12px; max-width: 250px;">
+                                <div style="background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(0, 72, 146, 0.15); padding: 10px 20px; border-radius: 12px; font-weight: 800; color: #004892; font-size: 13px; box-shadow: 0 4px 12px rgba(0, 72, 146, 0.05);">Market Simulations</div>
+                                <div style="background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(0, 72, 146, 0.15); padding: 10px 20px; border-radius: 12px; font-weight: 800; color: #004892; font-size: 13px; box-shadow: 0 4px 12px rgba(0, 72, 146, 0.05);">Asset Management</div>
                             </div>
                         </div>
                         
-                        <div style="position: absolute; bottom: 0; right: 0; width: 100%; height: 60%; z-index: 1;">
-                            <img src="/finance_3d_icon_v2_1771049957590.png" alt="Finance" style="position: absolute; bottom: -24px; right: -24px; height: 110%; width: auto; opacity: 1; pointer-events: none; mix-blend-mode: multiply; filter: contrast(1.1) brightness(1.1); mask-image: linear-gradient(to top, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%);">
+                        <div style="position: absolute; bottom: 0; right: 0; width: 100%; height: 55%; z-index: 1;">
+                            <img src="/finance_3d_icon_v2_1771049957590.png" alt="Finance" style="position: absolute; bottom: -20px; right: -20px; height: 100%; width: auto; opacity: 1; pointer-events: none; mix-blend-mode: multiply; filter: contrast(1.1) brightness(1.1);">
                         </div>
                         
                         <a href="/finance" data-link style="margin-top: auto; text-decoration: none; color: #004892; font-weight: 800; text-transform:uppercase; letter-spacing:3px; font-size:13px; display: flex; align-items: center; gap: 12px; position: relative; z-index: 3;">Explore Domain <i class="fas fa-arrow-right"></i></a>
                     </div>
 
                     <!-- 3. AI & Robotics (Bottom Left - Span 3) -->
-                    <div class="bento-item" style="grid-column: span 7; grid-row: span 3; background: #FFF5F6; border: 1px solid rgba(239, 91, 112, 0.1); padding: 40px; position: relative; overflow: hidden; display: flex; align-items: center;">
-                        <div style="width: 60%; position: relative; z-index: 3;">
-                            <h3 style="font-size: 34px; margin-bottom: 12px; color: #EF5B70; font-family: var(--font-display); font-weight: 800; line-height: 1.1;">AI & <br>Robotics</h3>
-                            <p style="font-size: 14px; color: #D14D5F; line-height: 1.6; opacity: 0.9;">Industrial-grade implementation of tomorrow's tech.</p>
-                            <a href="/ai-robotics" data-link style="margin-top: 24px; text-decoration: none; color: #EF5B70; font-weight: 800; text-transform:uppercase; letter-spacing:3px; font-size:13px; display: flex; align-items: center; gap: 12px;">Explore Domain <i class="fas fa-arrow-right"></i></a>
+                    <div class="bento-item" style="grid-column: span 7; grid-row: span 3; background: #FFF5F6; border: 1px solid rgba(239, 91, 112, 0.1); padding: 30px; position: relative; overflow: hidden; display: flex; align-items: center;">
+                        <div style="width: 55%; position: relative; z-index: 3;">
+                            <h3 style="font-size: 28px; margin-bottom: 8px; color: #EF5B70; font-family: var(--font-display); font-weight: 800; line-height: 1.1;">AI & <br>Robotics</h3>
+                            <p style="font-size: 13px; color: #D14D5F; line-height: 1.5; opacity: 0.9;">Industrial-grade implementation of tomorrow's tech.</p>
+                            <a href="/ai-robotics" data-link style="margin-top: 16px; text-decoration: none; color: #EF5B70; font-weight: 800; text-transform:uppercase; letter-spacing:3px; font-size:12px; display: flex; align-items: center; gap: 12px;">Explore Domain <i class="fas fa-arrow-right"></i></a>
                         </div>
                         
-                        <img src="/ai_robotics_3d_icon_final_1771050129801.png" alt="AI Robotics" style="position: absolute; right: 0; height: 110%; width: auto; z-index: 1; pointer-events: none; mix-blend-mode: multiply;">
+                        <img src="/ai_robotics_3d_icon_final_1771050129801.png" alt="AI Robotics" style="position: absolute; right: -30px; height: 100%; width: auto; z-index: 1; pointer-events: none; mix-blend-mode: multiply; filter: contrast(1.05) brightness(1.05);">
                     </div>
                 </div>
             </div>

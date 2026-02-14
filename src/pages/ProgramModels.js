@@ -1,7 +1,7 @@
 export async function ProgramModels() {
     const page = document.createElement('div');
     page.innerHTML = `
-        <section style="min-height: 100vh; display: flex; align-items: center;">
+        <section class="elite-section" style="min-height: 100vh; display: flex; align-items: center;">
             <div class="container">
                 <div class="reveal text-center">
                     <span class="label-sup">Execution Architecture</span>
@@ -11,14 +11,14 @@ export async function ProgramModels() {
             </div>
         </section>
 
-        <section class="bg-subtle" style="min-height: 100vh; display: flex; align-items: center;">
+        <section class="bg-subtle elite-section" style="min-height: 100vh; display: flex; align-items: center;">
             <div class="container">
                 <div class="reveal">
                     <div class="glass-card" style="padding:80px; text-align:center;">
                         <span class="label-sup">Methodology</span>
                         <h2 style="margin-bottom:60px;">The 70:20:10 Framework</h2>
                         
-                        <div style="max-width: 800px; margin: 0 auto; display: flex; align-items: center; gap: 40px; justify-content: center;">
+                        <div class="reveal" style="max-width: 800px; margin: 0 auto; display: flex; align-items: center; gap: 40px; justify-content: center;">
                             <!-- Visual Chart -->
                             <div style="position: relative; width: 200px; height: 200px;">
                                 <svg viewBox="0 0 36 36" style="width: 100%; height: 100%; transform: rotate(-90deg);">
@@ -72,9 +72,9 @@ export async function ProgramModels() {
             </div>
         </section>
 
-        <section style="min-height: 100vh; display: flex; align-items: center;">
+        <section class="elite-section" style="min-height: 100vh; display: flex; align-items: center;">
             <div class="container">
-                <div class="reveal" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px;">
+                <div class="reveal elite-grid-3" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px;">
                     <div class="glass-card" style="padding: 40px; background: white; border-radius: 20px; text-align: center; border: 1px solid rgba(247, 148, 30, 0.1); box-shadow: 0 10px 30px rgba(247, 148, 30, 0.05); transition: transform 0.3s ease;">
                         <div style="width: 60px; height: 60px; background: rgba(247, 148, 30, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: var(--accent-orange); font-size: 24px;"><i class="fas fa-bolt"></i></div>
                         <h3 style="margin-bottom:16px; font-size: 24px; font-weight: 800; color: var(--p-navy);">Intensive <br>Workshops</h3>
