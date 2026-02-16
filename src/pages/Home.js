@@ -40,9 +40,9 @@ export async function Home() {
                             }
                             .hero-slide.active { opacity: 1; }
                         </style>
-                        <img src="/hero-1.jpg" class="hero-slide active" alt="Institutional Excellence 1">
-                        <img src="/hero-2.jpg" class="hero-slide" alt="Institutional Excellence 2">
-                        <img src="/hero-3.jpg" class="hero-slide" alt="Institutional Excellence 3">
+                        <img src="/hero-1.jpg" class="hero-slide active" alt="Institutional Excellence 1" width="1200" height="650">
+                        <img src="/hero-2.jpg" class="hero-slide" alt="Institutional Excellence 2" width="1200" height="650" loading="lazy">
+                        <img src="/hero-3.jpg" class="hero-slide" alt="Institutional Excellence 3" width="1200" height="650" loading="lazy">
                         <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(255,255,255,0.4), transparent 60%);"></div>
                     </div>
                     
@@ -254,7 +254,7 @@ export async function Home() {
                 <div class="reveal bento-grid" style="grid-template-rows: repeat(6, 10vh); height: auto; gap: 20px; max-width: 1200px; margin: 0 auto; width: 100%;">
                     <!-- 1. Entrepreneurship (Top Left - Span 3) -->
                     <div class="bento-item" style="grid-column: span 7; grid-row: span 3; background: #FFF9F2; border: 1px solid rgba(247, 148, 30, 0.1); padding: 30px; position: relative; overflow: hidden; display: flex; flex-direction: column;">
-                        <img src="/entrepreneurship_3d_icon_final_1771050098762.png" alt="Entrepreneurship" style="position: absolute; top: 10%; right: -12%; height: 80%; width: auto; opacity: 1; transform: rotate(-5deg); pointer-events: none; z-index: 1; mix-blend-mode: multiply; filter: contrast(1.05) brightness(1.05);">
+                        <img src="/entrepreneurship_3d_icon_final_1771050098762.png" alt="Entrepreneurship" style="position: absolute; top: 10%; right: -12%; height: 80%; width: auto; opacity: 1; transform: rotate(-5deg); pointer-events: none; z-index: 1; mix-blend-mode: multiply; filter: contrast(1.05) brightness(1.05);" width="350" height="350" loading="lazy">
                         <span style="background: rgba(247, 148, 30, 0.1); color: #C05621; padding: 6px 16px; border-radius: 50px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; align-self: flex-start; position: relative; z-index: 2;">High Impact</span>
                         <h3 style="font-size: 28px; margin: 8px 0 8px; color: #7B341E; font-family: var(--font-display); font-weight: 800; line-height: 1.1; position: relative; z-index: 2; max-width: 60%;">Young <br>Entrepreneurship</h3>
                         <p style="font-size: 13px; color: #9C4221; line-height: 1.4; max-width: 60%; opacity: 0.9; position: relative; z-index: 2;">Students identify real problems, build prototypes, and pitch solutions to industry titans.</p>
@@ -284,7 +284,7 @@ export async function Home() {
                             <a href="/ai-robotics" data-link style="margin-top: 16px; text-decoration: none; color: #EF5B70; font-weight: 800; text-transform:uppercase; letter-spacing:3px; font-size:12px; display: flex; align-items: center; gap: 12px;">Explore Domain <i class="fas fa-arrow-right"></i></a>
                         </div>
                         
-                        <img src="/ai_robotics_3d_icon_final_1771050129801.png" alt="AI Robotics" style="position: absolute; right: -30px; height: 100%; width: auto; z-index: 1; pointer-events: none; mix-blend-mode: multiply; filter: contrast(1.05) brightness(1.05);">
+                        <img src="/ai_robotics_3d_icon_final_1771050129801.png" alt="AI Robotics" style="position: absolute; right: -30px; height: 100%; width: auto; z-index: 1; pointer-events: none; mix-blend-mode: multiply; filter: contrast(1.05) brightness(1.05);" width="350" height="350" loading="lazy">
                     </div>
                 </div>
             </div>

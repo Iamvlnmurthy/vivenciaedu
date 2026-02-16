@@ -16,7 +16,7 @@ export async function Entrepreneurship() {
                 <div class="reveal">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: center;">
                         <div style="position: relative;">
-                            <img src="/entrepreneurship_3d_icon_final_1771050098762.png" alt="Entrepreneurship 3D" style="width: 100%; max-width: 400px; transform: perspective(1000px) rotateY(-10deg); mix-blend-mode: multiply; filter: contrast(1.05) brightness(1.05);">
+                            <img src="/entrepreneurship_3d_icon_final_1771050098762.png" alt="Entrepreneurship 3D" style="width: 100%; max-width: 400px; transform: perspective(1000px) rotateY(-10deg); mix-blend-mode: multiply; filter: contrast(1.05) brightness(1.05);" width="400" height="400" loading="lazy">
                             <div class="glass-card" style="border-left:6px solid var(--accent-orange); margin-top: -40px; position: relative; z-index: 2;">
                                 <p style="font-family:var(--font-display); font-size:20px; font-weight:600; color:var(--p-navy); line-height:1.6;">"Entrepreneurship at Vivencia is not about starting businesses early. It is about building thinking, confidence, and problem-solving skills early."</p>
                             </div>
@@ -92,7 +92,7 @@ export async function Finance() {
             <div class="container">
                 <div class="reveal" style="max-width:800px; margin:0 auto;">
                     <div style="display: flex; justify-content: center; margin-bottom: 40px;">
-                        <img src="/finance_3d_icon_transparent_v2.png" alt="Finance 3D" style="height: 200px;">
+                        <img src="/finance_3d_icon_transparent_v2.png" alt="Finance 3D" style="height: 200px;" width="200" height="200" loading="lazy">
                     </div>
                     <h2 style="margin-bottom:60px;">Money as a Lifeskill</h2>
                     <div class="glass-card" style="border-top:6px solid var(--s-cyan); border-left:none; padding:80px;">
@@ -139,7 +139,7 @@ export async function AI() {
                 <div class="reveal" style="max-width:800px; margin:0 auto;">
                     <div class="glass-card" style="border-top:6px solid var(--accent-pink); border-left:none; padding:80px;">
                         <div style="display: flex; justify-content: center; margin-bottom: 40px;">
-                            <img src="/ai_robotics_3d_icon_final_1771050129801.png" alt="AI 3D" style="height: 200px; mix-blend-mode: multiply; filter: contrast(1.05) brightness(1.05);">
+                            <img src="/ai_robotics_3d_icon_final_1771050129801.png" alt="AI 3D" style="height: 200px; mix-blend-mode: multiply; filter: contrast(1.05) brightness(1.05);" width="200" height="200" loading="lazy">
                         </div>
                         <h2 style="margin-bottom:40px;">Technology Capability</h2>
                         <div class="elite-grid-3" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px; text-align:left;">

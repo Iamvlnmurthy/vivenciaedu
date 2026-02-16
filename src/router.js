@@ -20,11 +20,20 @@ export class Router {
 
     async handleRoute() {
         const path = window.location.pathname;
-        const route = this.routes[path] || this.routes['/'];
+        const routeConfig = this.routes[path] || this.routes['/'];
+
+        // Handle both simple function routes and object-based routes with metadata
+        const routeHandler = typeof routeConfig === 'function' ? routeConfig : routeConfig.handler;
+        const metadata = routeConfig.metadata || {};
+
+        // Update Metadata
+        if (metadata.title) document.title = metadata.title;
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && metadata.description) metaDesc.setAttribute('content', metadata.description);
 
         // Render Page
         this.app.innerHTML = '';
-        const page = await route();
+        const page = await routeHandler();
         this.app.appendChild(page);
 
         // Trigger scroll animations for new content

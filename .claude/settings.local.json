@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "WebFetch(domain:antigravity.google)",
+      "WebFetch(domain:medium.com)"
+    ]
+  }
+}

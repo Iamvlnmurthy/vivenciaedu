@@ -29,9 +29,41 @@ export function Layout(content) {
                 <li><a href="/models" data-link class="nav-link">Models</a></li>
             </ul>
 
-            <div style="display: flex; gap: 32px; align-items: center;">
-                <a href="https://vivenciaedu.com/erp/index.php" target="_blank" class="nav-link" style="color: var(--p-brand-blue); border-bottom: 2px solid transparent; transition: var(--transition);">Login</a>
-                <a href="/contact" data-link class="btn-elite" style="height:50px; padding: 0 40px; border-radius: 8px; font-size: 13px;">Partner With Us</a>
+            <div class="nav-actions">
+                <a href="https://vivenciaedu.com/erp/index.php" target="_blank" class="nav-link login-link">Login</a>
+                <a href="/contact" data-link class="btn-elite contact-btn">Partner With Us</a>
+                <button class="mobile-toggle" id="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU OVERLAY -->
+        <div class="mobile-menu-overlay" id="mobile-menu">
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-header">
+                    <img src="/logo.png" alt="Vivencia" style="height: 60px;">
+                    <button class="close-mobile" id="close-mobile">&times;</button>
+                </div>
+                <div class="mobile-links">
+                    <a href="/" data-link class="mobile-link">Vision</a>
+                    <a href="/about" data-link class="mobile-link">The Firm</a>
+                    <div class="mobile-dropdown">
+                        <span class="mobile-link">Programs <i class="fas fa-chevron-down"></i></span>
+                        <div class="mobile-sublinks">
+                            <a href="/entrepreneurship" data-link class="mobile-sublink">Young Entrepreneurship</a>
+                            <a href="/finance" data-link class="mobile-sublink">Financial Literacy</a>
+                            <a href="/ai-robotics" data-link class="mobile-sublink">AI & Robotics</a>
+                        </div>
+                    </div>
+                    <a href="/models" data-link class="mobile-link">Models</a>
+                    <a href="/contact" data-link class="mobile-link">Partner With Us</a>
+                </div>
+                <div class="mobile-footer">
+                    <a href="https://vivenciaedu.com/erp/index.php" target="_blank" class="btn-elite" style="width: 100%;">ERP Login</a>
+                </div>
             </div>
         </div>
         <style>
@@ -153,8 +185,33 @@ export function Layout(content) {
         }
     });
 
-    // Modal Form Events
+    // Mobile Menu Events
     setTimeout(() => {
+        const toggle = nav.querySelector('#mobile-toggle');
+        const close = nav.querySelector('#close-mobile');
+        const mobileMenu = nav.querySelector('#mobile-menu');
+        const links = mobileMenu.querySelectorAll('a[data-link]');
+
+        const openMenu = () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeMenu = () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        if (toggle) toggle.addEventListener('click', openMenu);
+        if (close) close.addEventListener('click', closeMenu);
+        links.forEach(link => link.addEventListener('click', closeMenu));
+
+        // Mobile Dropdown Toggle
+        const dropToggle = mobileMenu.querySelector('.mobile-dropdown');
+        if (dropToggle) dropToggle.addEventListener('click', () => {
+            dropToggle.classList.toggle('open');
+        });
+
         const closeBtn = modal.querySelector('#close-modal');
         const form = modal.querySelector('#wa-modal-form');
 
@@ -241,8 +298,8 @@ export function Layout(content) {
             <div style="border-top: 1px solid rgba(0,0,0,0.06); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--text-muted); font-weight: 500;">
                 <p>© 2026 Vivencia Educational Services. Global Education Standards.</p>
                 <div style="display:flex; gap:32px;">
-                    <a href="#" style="text-decoration:none; color:inherit; transition: color 0.3s;" onmouseover="this.style.color='var(--p-blue)'" onmouseout="this.style.color='inherit'">Privacy Policy</a>
-                    <a href="#" style="text-decoration:none; color:inherit; transition: color 0.3s;" onmouseover="this.style.color='var(--p-blue)'" onmouseout="this.style.color='inherit'">Terms of Service</a>
+                    <a href="/privacy" data-link style="text-decoration:none; color:inherit; transition: color 0.3s;" onmouseover="this.style.color='var(--p-blue)'" onmouseout="this.style.color='inherit'">Privacy Policy</a>
+                    <a href="/terms" data-link style="text-decoration:none; color:inherit; transition: color 0.3s;" onmouseover="this.style.color='var(--p-blue)'" onmouseout="this.style.color='inherit'">Terms of Service</a>
                 </div>
             </div>
         </div>
