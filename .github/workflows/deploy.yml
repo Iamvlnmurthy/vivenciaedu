@@ -24,6 +24,11 @@ jobs:
       - name: Build Project
         run: npm run build
 
+      - name: Debug Secret Check
+        run: |
+          if [ -z "${{ secrets.FTP_SERVER }}" ]; then echo "FTP_SERVER is EMPTY or MISSING"; else echo "FTP_SERVER is set"; fi
+          if [ -z "${{ secrets.FTP_USERNAME }}" ]; then echo "FTP_USERNAME is EMPTY or MISSING"; else echo "FTP_USERNAME is set"; fi
+
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -32,4 +37,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: public_html/
-          dangerously-allow-clean-remote-dir: false # Safety first
+          dangerous-clean-slate: false
