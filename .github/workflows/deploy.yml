@@ -24,10 +24,20 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      - name: Debug Secret Check
+      - name: Verify Secrets (Internal Check)
+        shell: bash
         run: |
-          if [ -z "${{ secrets.FTP_SERVER }}" ]; then echo "FTP_SERVER is EMPTY or MISSING"; else echo "FTP_SERVER is set"; fi
-          if [ -z "${{ secrets.FTP_USERNAME }}" ]; then echo "FTP_USERNAME is EMPTY or MISSING"; else echo "FTP_USERNAME is set"; fi
+          MISSING=0
+          if [ -z "${{ secrets.FTP_SERVER }}" ]; then echo "❌ FTP_SERVER is MISSING"; MISSING=1; fi
+          if [ -z "${{ secrets.FTP_USERNAME }}" ]; then echo "❌ FTP_USERNAME is MISSING"; MISSING=1; fi
+          if [ -z "${{ secrets.FTP_PASSWORD }}" ]; then echo "❌ FTP_PASSWORD is MISSING"; MISSING=1; fi
+          if [ $MISSING -eq 1 ]; then
+            echo "---"
+            echo "HELP: Please ensure secrets are in 'Settings > Secrets and variables > Actions > Repository secrets'."
+            echo "DO NOT add them under 'Environments' or 'Variables'."
+            exit 1
+          fi
+          echo "✅ All secrets are present."
 
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
